@@ -94,7 +94,7 @@ app.post('/end-conversation', async (req, res) => {
 
     console.log('Attempting to send summary to Django server...');
     try {
-      const djangoResponse = await axios.post('http://127.0.0.1:8000/users/store-summary/', {
+      const djangoResponse = await axios.post('https://django-askmedi.onrender.com/users/store-summary/', {
         summary_content: summaryContent,
         user_id: user_Id,
         diagnosis_content: diagnosisContent
@@ -134,7 +134,7 @@ app.post('/end-conversation', async (req, res) => {
 
 app.get('/test-django-connection', async (req, res) => {
   try {
-    const response = await axios.get('http://127.0.0.1:8000/');
+    const response = await axios.get('https://django-askmedi.onrender.com');
     res.json({ message: 'Connection successful', data: response.data });
   } catch (error) {
     console.error('Error connecting to Django server:', error.message);
