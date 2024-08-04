@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: ['http://127.0.0.1:8000', 'http://localhost:3000']
+  origin: ['http://127.0.0.1:8000', 'http://localhost:3000', 'https://ask-medi-julianacholders-projects.vercel.app']
 }));
 
 const apiKey = process.env.OPENAI_API_KEY;
